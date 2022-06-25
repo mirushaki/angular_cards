@@ -4,6 +4,27 @@
 <app-card></app-card>
 <app-card></app-card>
 
+<app-title></app-title>
+
+<!-- not working -->
+<img src="imageURL" />
+
+<!-- working -->
+<img src="{{imageURL}}" />
+
+<!-- working -->
+<img [src]="imageURL" />
+
+<!-- not working -->
+<!-- <img [src]="{{imageURL}}" /> -->
+
+<!-- working -->
+<img [src]="imageURL + ''" />
+
+<!-- not working -->
+<!-- <img (src)="imageURL()" /> -->
+
+
 <div class="card">
   <div class="card-image">
     <figure class="image is4by3">

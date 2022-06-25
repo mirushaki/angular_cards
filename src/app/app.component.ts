@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_cards';
+  imageURL = 'assets/biking.jpeg';
+  result = ['', ''];
+
+  constructor() {
+    this.result = ['🥚', '🐤'].sort();
+    console.log(this.result);
+  }
 }
