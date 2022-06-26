@@ -1,8 +1,5 @@
 <div class="card">
-    <div class="card-image">
-      <figure class="image is4by3">
-        <img [src]="post.imageUrl" />
-      </figure>
+    <div class="card-image" [ngStyle]="{'background-image': 'url(' + post.imageUrl + ')'}">
     </div>
     <div class="card-content">
       <div class="media-content">

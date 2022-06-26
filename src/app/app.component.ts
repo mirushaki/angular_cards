@@ -17,7 +17,7 @@ export class AppComponent {
       title: 'Snowy mountain',
       imageUrl: 'assets/mountain.jpeg',
       username: '@mountainlover',
-      content: 'Here is a picture of a snowy mountain'
+      content: 'Here is a picture of a snowy mountain. This card can have multiline text.'
     },
     {
       title: 'Mountain biking',
