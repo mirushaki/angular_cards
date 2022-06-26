@@ -1,3 +1,4 @@
+import { PostInterface } from './../post-interface';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() title = '';
-  @Input() imageUrl = '';
-  @Input() username = '';
-  @Input() content = '';
+  @Input() post: PostInterface = {
+    title: '',
+    imageUrl: '',
+    username: '',
+    content: ''
+  };
 
   constructor() { }
 
