@@ -1,3 +1,4 @@
+import { PostModel } from './../post-model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -6,12 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  @Input() title = '';
-  @Input() imageUrl = '';
-  @Input() username = '';
-  @Input() content = '';
-
-  constructor() { }
+  @Input() post: PostModel = new PostModel();
 
   ngOnInit(): void {
   }
