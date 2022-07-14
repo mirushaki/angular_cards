@@ -6,16 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  value = 0;
+  randomText = 'Lorem';
+  enteredText = '';
+
+  solved = false;
 
 
-  changeValue() {
-    console.log("Call change value method");
-  }
-
-  notifyResult() {
-    this.value += 5;
-    console.log("Method: notifyResult; Value " + this.value);
+  onInput(value: string) {
+    if (value === this.randomText) {
+      this.solved = true;
+    } else {
+      this.solved = false;
+    }
   }
   
 
