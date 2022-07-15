@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faker } from "@faker-js/faker";
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  randomText = 'Lorem';
+  randomText = faker.lorem.sentence();
   enteredText = '';
 
 
