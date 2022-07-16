@@ -7,20 +7,23 @@ import { faker } from "@faker-js/faker";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  randomText = faker.lorem.sentence();
-  enteredText = '';
-
-
-  onInput(value: string) {
-    this.enteredText = value;
-  }
+  name: string = '';
+  date: string = '';
+  amount: string = '';
   
-  compare(randomLetter: string, enteredLetter: string) {
-    if (!enteredLetter) {
-      return "pending";
-    }
+  onNameChange(event:  Event) {
+    let eventTarget = <HTMLInputElement>event.target;
+    this.name = eventTarget.value;
+  }
 
-    return (randomLetter === enteredLetter) ? "correct" : "incorrect";
+  onDateChange(event:  Event) {
+    let eventTarget = <HTMLInputElement>event.target;
+    this.date = eventTarget.value;
+  }
+
+  onAmountChange(event:  Event) {
+    let eventTarget = <HTMLInputElement>event.target;
+    this.amount = eventTarget.value;
   }
 
 }
