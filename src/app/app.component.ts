@@ -18,6 +18,8 @@ export class AppComponent {
     } else {
       this.solved = false;
     }
+
+    // this.solved = (value === this.randomText);
   }
   
 
