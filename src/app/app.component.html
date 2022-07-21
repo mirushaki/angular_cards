@@ -30,4 +30,14 @@
             <p class="mt-3 mb-0">{{ amount | currency:"GEL":"symbol-narrow" }}</p>
         </div>
     </div>
+    <div class="row mb-3">
+        <div class="form-group col">
+            <label class="form-label" for="height">Height</label>
+            <input id="height" type="number" class="form-control" (input)="onHeightChange($event)" min="0" step="0.01"/>
+        </div>
+        <div class="col">
+            <label><b>Height</b></label>
+            <p class="mt-3 mb-0">{{ height | number:"1,2-2"}}</p>
+        </div>
+    </div>
 </div>

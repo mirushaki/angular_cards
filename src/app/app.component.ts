@@ -7,9 +7,10 @@ import { faker } from "@faker-js/faker";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name: string = '';
-  date: string = '';
-  amount: string = '';
+  name: string;
+  date: string;
+  amount: number;
+  height: number;
   
   onNameChange(event:  Event) {
     let eventTarget = <HTMLInputElement>event.target;
@@ -23,7 +24,12 @@ export class AppComponent {
 
   onAmountChange(event:  Event) {
     let eventTarget = <HTMLInputElement>event.target;
-    this.amount = eventTarget.value;
+    this.amount = parseFloat(eventTarget.value);
+  }
+
+  onHeightChange(event:  Event) {
+    let eventTarget = <HTMLInputElement>event.target;
+    this.height = parseFloat(eventTarget.value);
   }
 
 }
