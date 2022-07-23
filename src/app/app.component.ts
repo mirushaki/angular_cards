@@ -11,6 +11,12 @@ export class AppComponent {
   date: string;
   amount: number;
   height: number;
+  celsius: number;
+
+  onCelsiusChange(event: Event) {
+    let eventTarget = <HTMLInputElement>event.target;
+    this.celsius = parseFloat(eventTarget.value);
+  }
   
   onNameChange(event:  Event) {
     let eventTarget = <HTMLInputElement>event.target;
