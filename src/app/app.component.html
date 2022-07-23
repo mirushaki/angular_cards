@@ -40,4 +40,14 @@
             <p class="mt-3 mb-0">{{ height | number:"1,2-2"}}</p>
         </div>
     </div>
+    <div class="row mb-3">
+        <div class="form-group col">
+            <label class="form-label" for="miles">Miles</label>
+            <input id="miles" type="number" class="form-control" (input)="onMilesChange($event)" min="0" step="0.01"/>
+        </div>
+        <div class="col">
+            <label><b>Kilometers</b></label>
+            <p class="mt-3 mb-0">{{ miles | convert:'m' | number:'1.0-2'}}</p>
+        </div>
+    </div>
 </div>

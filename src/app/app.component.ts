@@ -11,6 +11,7 @@ export class AppComponent {
   date: string;
   amount: number;
   height: number;
+  miles: number;
   
   onNameChange(event:  Event) {
     let eventTarget = <HTMLInputElement>event.target;
@@ -30,6 +31,11 @@ export class AppComponent {
   onHeightChange(event:  Event) {
     let eventTarget = <HTMLInputElement>event.target;
     this.height = parseFloat(eventTarget.value);
+  }
+
+  onMilesChange(event: Event) {
+    let eventTarget = <HTMLInputElement>event.target;
+    this.miles = parseFloat(eventTarget.value);
   }
 
 }
