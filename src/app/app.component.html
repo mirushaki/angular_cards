@@ -45,9 +45,19 @@
             <label class="form-label" for="miles">Miles</label>
             <input id="miles" type="number" class="form-control" (input)="onMilesChange($event)" min="0" step="0.01"/>
         </div>
+            <div class="btn-group btn-group-toggle mt-2 mb-2" data-toggle="buttons">
+                <label class="btn btn-secondary" *ngFor='let unit of getUnit | keyvalue:originalOrder'>
+                  <input type="radio"
+                         name="unit" 
+                         [id]="unit.value" 
+                         autocomplete="off" 
+                         (change)="onUnitChange(unit.value)" 
+                         [checked]="activeUnit === unit.value">{{unit.value}}
+                </label>
+              </div>
         <div class="col">
             <label><b>Kilometers</b></label>
-            <p class="mt-3 mb-0">{{ miles | convert:'m' | number:'1.0-2'}}</p>
+            <p class="mt-3 mb-0">{{ miles | convert:activeUnit | number:'1.0-2'}}</p>
         </div>
     </div>
 </div>

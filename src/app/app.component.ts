@@ -1,17 +1,21 @@
-import { Component } from '@angular/core';
+import { KeyValue } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { faker } from "@faker-js/faker";
+import { UNIT } from './convert.pipe';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   name: string;
   date: string;
   amount: number;
   height: number;
   miles: number;
+  unit: UNIT;
+  activeUnit: string = UNIT.KM;
   
   onNameChange(event:  Event) {
     let eventTarget = <HTMLInputElement>event.target;
@@ -36,6 +40,18 @@ export class AppComponent {
   onMilesChange(event: Event) {
     let eventTarget = <HTMLInputElement>event.target;
     this.miles = parseFloat(eventTarget.value);
+  }
+
+  onUnitChange(unit: string) {
+    this.activeUnit = unit;
+  }
+
+  originalOrder = (a: any,  b: any): number => {
+    return 0;
+  }
+
+  public get getUnit(): typeof UNIT {
+    return UNIT; 
   }
 
 }
