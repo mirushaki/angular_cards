@@ -2,7 +2,7 @@
 
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-        <li class="page-item" [ngClass]="{ disabled: currentPage === 0}" (click)="checkPrevPage()"><a class="page-link" href="#">Prev</a></li>
+        <li class="page-item" appClass [name]="'Mirian'" [ngClass]="{ disabled: currentPage === 0}" (click)="checkPrevPage()"><a class="page-link" href="#">Prev</a></li>
         <ng-container *ngFor="let image of images; let i = index">
             <li class="page-item"
                 [ngClass]="{ active: i === currentPage}"
