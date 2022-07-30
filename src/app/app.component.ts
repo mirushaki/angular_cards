@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   currentPage = 0;
+  customClass: string = '';
   images = [
     {
       title: 'At the Beach',
@@ -132,5 +133,22 @@ export class AppComponent {
 
   checkWindowIndex(index: number) {
     return Math.abs(this.currentPage - index) < 5;
+  }
+
+  changeClass(pageIndex: number) {
+    console.log("pageINdex: " + pageIndex);
+    switch(pageIndex) {
+      case 1:
+        this.customClass = "class_1";
+        break;
+      case 2:
+        this.customClass = "class_2";
+        break;
+      case 3:
+        this.customClass = "class_3";
+        break;
+      default:
+        this.customClass = "defaultClass";
+    }
   }
 }
