@@ -4,9 +4,9 @@
         <ul class="pagination justify-content-center">
             <li class="page-item" [appClass]="{ disabled: currentPage === 0}" (click)="checkPrevPage()"><a
                     class="page-link" href="#">Prev</a></li>
-            <ng-container *ngFor="let image of images; let i = index">
+            <ng-container *appTimes="images.length; let i = index; let f = fourth">
                 <li class="page-item" [ngClass]="{ active: i === currentPage}" *ngIf="checkWindowIndex(i)">
-                    <a (click)="currentPage = i" class="page-link" href="#">{{ i + 1}}</a>
+                    <a (click)="currentPage = i" class="page-link" href="#" [ngClass]="{ red: f }">{{ i + 1}}</a>
                 </li>
             </ng-container>
             <li class="page-item" (click)="checkNextPage()" [ngClass]="{ disabled: currentPage === images.length - 1}">
