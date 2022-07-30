@@ -1,22 +1,22 @@
-<h1>DEMO App</h1>
-
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        <li class="page-item" appClass [name]="'Mirian'" [ngClass]="{ disabled: currentPage === 0}" (click)="checkPrevPage()"><a class="page-link" href="#">Prev</a></li>
-        <ng-container *ngFor="let image of images; let i = index">
-            <li class="page-item"
-                [ngClass]="{ active: i === currentPage}"
-                *ngIf="checkWindowIndex(i)">
-                <a (click)="currentPage = i" class="page-link" href="#">{{ i + 1}}</a>
+<div class="container">
+    <h1>DEMO App</h1>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" [appClass]="{ disabled: currentPage === 0}" (click)="checkPrevPage()"><a
+                    class="page-link" href="#">Prev</a></li>
+            <ng-container *ngFor="let image of images; let i = index">
+                <li class="page-item" [ngClass]="{ active: i === currentPage}" *ngIf="checkWindowIndex(i)">
+                    <a (click)="currentPage = i" class="page-link" href="#">{{ i + 1}}</a>
+                </li>
+            </ng-container>
+            <li class="page-item" (click)="checkNextPage()" [ngClass]="{ disabled: currentPage === images.length - 1}">
+                <a class="page-link" href="#">Next</a>
             </li>
-        </ng-container>
-        <li class="page-item" (click)="checkNextPage()" [ngClass]="{ disabled: currentPage === images.length - 1}">
-            <a class="page-link" href="#">Next</a>
-        </li>
-    </ul>
-</nav>
+        </ul>
+    </nav>
 
-<div>
-    <h4>{{images[currentPage].title}}</h4>
-    <img [src]="images[currentPage].url" [alt]="images[currentPage].title">
+    <div>
+        <h4>{{images[currentPage].title}}</h4>
+        <img [src]="images[currentPage].url" [alt]="images[currentPage].title">
+    </div>
 </div>
