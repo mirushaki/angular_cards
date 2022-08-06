@@ -9,6 +9,10 @@ import { MathModule } from './math/math.module';
 export class AppComponent implements OnInit {
   title = 'comps';
 
+  constructor() {
+      console.log('1');
+  }
+
   ngOnInit(): void {
     console.log(MathModule.sum(5, 7));
   }
