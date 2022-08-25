@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { MathModule } from './math/math.module';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'comps';
-
-  ngOnInit(): void {
-    console.log(MathModule.sum(5, 7));
-  }
 }
