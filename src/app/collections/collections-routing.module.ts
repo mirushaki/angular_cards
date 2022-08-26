@@ -5,16 +5,13 @@ import { CollectionsHomeComponent } from './collections-home/collections-home.co
 import { BiographyComponent } from './biography/biography.component';
 import { CompaniesComponent } from './companies/companies.component';
 import { PartnersComponent } from './partners/partners.component';
+import { RouterMap } from '../routermap';
 
 const routes: Routes = [
   {
     path: '',
     component: CollectionsHomeComponent,
-    children: [
-      { path: '', component: BiographyComponent },
-      { path: 'companies', component: CompaniesComponent },
-      { path: 'partners', component: PartnersComponent }
-    ]
+    children: RouterMap.collectionPaths
   }
 ];
 

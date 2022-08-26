@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterMap } from 'src/app/routermap';
 
 @Component({
   selector: 'app-collections-home',
@@ -21,4 +22,14 @@ export class CollectionsHomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  getCompanyRoute()
+  {
+    return RouterMap.routes.collections.companies.path;
+  }
+
+  getPartnersRoute()
+  {
+    return RouterMap.routes.collections.partners.path;
+  }
 }
