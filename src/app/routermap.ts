@@ -5,7 +5,7 @@ import { PartnersComponent } from "./collections/partners/partners.component";
 export class RouterMap {
     public static routes = {
         'collections': {
-            'test': { path: '', component: BiographyComponent },
+            'test': { path: 'biography', component: BiographyComponent },
             'companies': { path: 'companies', component: CompaniesComponent },
             'partners': { path: 'partners', component: PartnersComponent },
         },

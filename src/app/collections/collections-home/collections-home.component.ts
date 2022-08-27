@@ -23,6 +23,9 @@ export class CollectionsHomeComponent implements OnInit {
 
   ngOnInit() {}
 
+
+  
+
   getCompanyRoute()
   {
     return RouterMap.routes.collections.companies.path;
