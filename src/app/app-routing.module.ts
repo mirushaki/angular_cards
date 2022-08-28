@@ -24,6 +24,11 @@ const routes: Routes = [
     loadChildren: () => import('./mods/mods.module')
       .then(m => m.ModsModule)
   },
+  {
+    path: 'weather',
+    loadChildren: () => import('./weather/weather.module')
+      .then(m => m.WeatherModule)
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];

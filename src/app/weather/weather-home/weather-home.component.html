@@ -1,1 +1,9 @@
 <p>weather-home works! - bootstrap</p>
+
+<div>
+    <input type="text" placeholder="Celsius" id="celsius" (input)="setCelsiusValue($event.target.value)" >
+    <input type="button" value="Convert" (click)="convertToFahrenheit()" >
+    <span class="fahrenheit-wrapper">{{ fahrenheit }} <b>&#8457;</b></span>
+    <br >
+    <input type="button" value="Reset" id="reset" (click)="clear()" >
+</div>
