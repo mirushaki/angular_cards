@@ -11,7 +11,11 @@ const routes: Routes = [
   {
     path: '',
     component: CollectionsHomeComponent,
-    children: RouterMap.collectionPaths
+    children: [
+      { path: 'biography', component: BiographyComponent },
+      { path: 'companies', component: CompaniesComponent },
+      { path: 'partners', component: PartnersComponent },
+    ]
   }
 ];
 
