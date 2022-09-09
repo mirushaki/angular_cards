@@ -12,7 +12,12 @@ const routes: Routes = [
     path: '',
     component: CollectionsHomeComponent,
     children: RouterMap.collectionPaths
-  }
+  },
+  // {
+  //   path: 'orders',
+  //   component: CollectionsHomeComponent,
+  //   children: RouterMap.collectionPaths
+  // }
 ];
 
 @NgModule({

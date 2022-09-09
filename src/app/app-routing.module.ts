@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ItemsHomeComponent } from './items/items-home/items-home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
     loadChildren: () => import('./weather/weather.module')
       .then(m => m.WeatherModule)
   },
+  { path: 'items', component: ItemsHomeComponent },
   { path: '', component: HomeComponent },
   { path: '**', component: NotFoundComponent },
 ];
