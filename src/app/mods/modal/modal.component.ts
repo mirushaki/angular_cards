@@ -3,7 +3,8 @@ import {
   OnInit,
   ElementRef,
   Output,
-  EventEmitter
+  EventEmitter,
+  ContentChild,
 } from '@angular/core';
 
 @Component({
@@ -13,6 +14,12 @@ import {
 })
 export class ModalComponent implements OnInit {
   @Output() close = new EventEmitter();
+
+  useDefaultAction: boolean = true;
+
+  @ContentChild('footer') customAction: ElementRef = {
+    nativeElement: undefined
+  };
 
   constructor(private el: ElementRef) {}
 
@@ -27,4 +34,11 @@ export class ModalComponent implements OnInit {
   onCloseClick() {
     this.close.emit();
   }
+
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit");
+    console.log(this.customAction);
+    this.useDefaultAction = (this.customAction === undefined);
+  }
+
 }

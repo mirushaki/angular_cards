@@ -7,10 +7,10 @@
     <div class="content">
       <ng-content></ng-content>
     </div>
-    <div class="actions actions-default">
+    <div *ngIf="useDefaultAction" class="actions">
       <button (click)="onCloseClick()" class="ui button">OK</button>
     </div>
-    <div class="actions">
+    <div *ngIf="!useDefaultAction" class="actions">
       <ng-content select="[modalFooter]"></ng-content>
     </div>
   </div>
