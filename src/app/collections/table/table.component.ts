@@ -9,7 +9,7 @@ export class TableComponent implements OnInit {
   @Input('class') classNames = '';
 
   @Input() data = [];
-  @Input() headers:any = [];
+  @Input() headers = [];
 
   constructor() {}
 
