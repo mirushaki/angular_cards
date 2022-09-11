@@ -8,7 +8,7 @@
       <ng-content></ng-content>
     </div>
     
-    <div *ngIf="useDefaultAction" class="actions">
+    <div *ngIf="useDefaultAction; else elseBlock" class="actions">
       <button (click)="onCloseClick()" class="ui button">OK</button>
     </div>
     <ng-template #elseBlock>
