@@ -7,11 +7,18 @@
     <div class="content">
       <ng-content></ng-content>
     </div>
+    
     <div *ngIf="useDefaultAction" class="actions">
       <button (click)="onCloseClick()" class="ui button">OK</button>
     </div>
-    <div *ngIf="!useDefaultAction" class="actions">
+    <ng-template #elseBlock>
+      <div class="actions">
+        <ng-content select="[modalFooter]"></ng-content>
+      </div>
+    </ng-template>
+
+    <!-- <div *ngIf="!useDefaultAction" class="actions">
       <ng-content select="[modalFooter]"></ng-content>
-    </div>
+    </div> -->
   </div>
 </div>
