@@ -1,7 +1,2 @@
-<app-card
-    *ngFor="let post of posts"
-    [title]="post.title"
-    [imageUrl]="post.imageUrl"
-    [username]="post.username"
-    [content]="post.content"
-></app-card>
+<app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+<app-page-list></app-page-list>
