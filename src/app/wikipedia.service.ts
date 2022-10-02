@@ -5,5 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class WikipediaService {
 
-  constructor() { }
+  constructor() { 
+    
+  }
+
+  public request() {
+    console.log("I'm wikipedia service");
+  }
+
 }
