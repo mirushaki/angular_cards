@@ -1,33 +1,5 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, ReflectiveInjector } from '@angular/core';
 import { WikipediaService } from './wikipedia.service';
-
-
-
-@Injectable({ providedIn: 'root' })
-class Sedan {
-  drive(): void {
-    console.log("I'm Sedan");
-  }
-}
-
-@Injectable({ providedIn: 'root' })
-class Mercedes extends Sedan {
-
-  override drive() {
-      console.log("I'm Mercedes");
-  }
-
-}
-
-@Injectable({ providedIn: 'root' })
-class Ford extends Sedan {
-
-  override drive() {
-      console.log("I'm Ford");
-  }
-
-}
-
 
 @Component({
   selector: 'app-root',
@@ -35,15 +7,13 @@ class Ford extends Sedan {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pages = [];
 
-  constructor(private car: Sedan, private wikipedia: WikipediaService) {
-
-  }
+  constructor(private wikipedia: WikipediaService) {}
 
   onTerm(term: string) {
-    console.log(term);
-
-    this.car.drive();
-    this.wikipedia.request();
+    this.wikipedia.search(term).subscribe((response: any) => {
+      this.pages = response.query.search;
+    });
   }
 }
